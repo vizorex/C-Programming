@@ -32,11 +32,12 @@ void main()
 void merge(int arr[], int l, int m, int r)
 {
 	int i, j , k;
-	int lenL = m - l +1;
-	int lenR = r - m ;
+	int lenL = m - l +1; // length of left half
+	int lenR = r - m ; //length of right half
 
-	int left[lenL], right[lenR];
-
+	int left[lenL], right[lenR];	
+	//asking for temporary array for left halves and right halves to store their values
+	//copying values to respective halves..
 	for(i=0;i<lenL;i++)
 		{ 
 			left[i] = arr[l + i]; 
@@ -45,13 +46,13 @@ void merge(int arr[], int l, int m, int r)
 		{ 
 			right[i] = arr[m+1+i]; 
 		}
-	i=0; j=0; k=0;
-	while(i<lenL && j < lenR)
+	i=0; j=0; k=0; //set these values to 0 to intialize sorting saving of arrays..
+	while(i<lenL && j < lenR)  //we are not sure if left is bigger or right is ..so i put both to be safe
 	{
 		if(left[i] <= right[j])
 		{
 			arr[l+k] = left[i];
-			i++; k++;
+			i++; k++; //a number from left is copied increment i of left and k of arr..
 		}
 		else
 		{
@@ -60,6 +61,7 @@ void merge(int arr[], int l, int m, int r)
 		}
 	}
 
+	//if left or right halves are not equal in size..this while ensure the remaining un compared number is pasted
 	while(i<lenL)
 	{
 		arr[l + k] =left[i];
@@ -77,7 +79,7 @@ void mergeSort(int arr[], int l, int r)
     if (l < r)
     {
         
-        int m = l + ((r-l)/2);
+        int m = l + ((r-l)/2); //to find mid index of arr between l and r
 
         mergeSort(arr, l, m);
         mergeSort(arr, m+1, r);
