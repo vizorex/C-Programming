@@ -1,13 +1,13 @@
 /***************************************************************************************************************
-*                                                                                                        		*
-*	Here is little bit of explation for my sorting technique for selection based sorting               			*   
-*																																					*
-*	{**|****} is our little int string. Now everything to left of '|' is already sorted, means						*
-*	every number in right wing is either greater or equal to any from left wing. Now best thing is to select 	*
-*	small from right wing and put it to right most of |  (i swapped the number i to small ). Now everything		*
+*                                                                                                        		
+*	Here is little bit of explation for my sorting technique for selection based sorting               			   
+*																												
+*	{**|****} is our little int string. Now everything to left of '|' is already sorted, means					
+*	every number in right wing is either greater or equal to any from left wing. Now best thing is to select 	
+*	small from right wing and put it to right most of |  (i swapped the number i to small ). Now everything	
 *	wall +1 is sorted.																														*
-*	wall is imaginary ..sort of..now u can figure out everything from Code 													*
-*                                                                                                        		*
+*	wall is imaginary ..sort of..now u can figure out everything from Code 										
+*                                                                                                        		
 ***************************************************************************************************************/
 #include<stdio.h>
 #include<string.h>
