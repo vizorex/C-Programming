@@ -59,8 +59,7 @@ void ins()
 	
 	node *ptr = malloc(sizeof(node));
 	
-
-
+	putchar('\n');
 	printf("Enter the Student Id:");
 	scanf("%d", &ptr->student.id);
 	printf("Enter the Student Name :");
@@ -87,13 +86,47 @@ void ins()
 
 void del()
 {
-	printf("Deleting \n ");
+	printf("\nWarning: This will parmanently delete the selective data. \nIf u really want to proceed, give the ID of selective student: ");
+	int n;
+	scanf("%d", &n);
+
+	if(first->student.id == n)
+	{
+		first = first->next ;
+		return;
+	}
+	else if(first->next == NULL)
+	{
+		printf("Warning: Damm! No one with that ID in List!!\n");
+		return;
+	}
+	node *tmpf = first->next;
+	node *tmpp = first;
+	while(1)
+	{	
+		if(tmpf->student.id == n)
+		{
+			tmpp->next = tmpf->next;
+			break;
+		}
+
+		else if(tmpf->next == NULL)
+		{
+			printf("Warning: Damm! No one with that ID in List!!\n");
+			break;		
+		}
+		else 
+		{	
+			tmpp = tmpf;
+			tmpf = tmpf->next;
+		}
+	}
 }
 
 void find()
 {	
 	int n;
-	printf("Enter the student ID : ");
+	printf("\nEnter the student ID : ");
 	scanf("%d", &n);
 
 	node *tmp = first;
